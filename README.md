@@ -22,4 +22,8 @@ You can also add new employees, departments and roles. Employees roles can be up
 #Author
 Fatim Robbins fmsis@hotmail.com
 
+<img src="Screenshot2.png" alt="Screenshot of app">
+
+<img src="Screenshot3.png" alt="Screenshot of app">
+
 
