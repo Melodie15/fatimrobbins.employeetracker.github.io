@@ -7,6 +7,8 @@ As a business owner
 I want to be able to view and manage the departments, roles, and employees in my company
 So that I can organize and plan my business
 
+<img src="Screenshot1.png" alt="Screenshot of app">
+
 #Description
 The employee tracker is an app that allows you to view all employees, roles and department within your company.
 You can also add new employees, departments and roles. Employees roles can be updated asa well.
