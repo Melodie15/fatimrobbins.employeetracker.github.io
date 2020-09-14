@@ -39,18 +39,34 @@ function runSearch() {
           "exit"
         ]
       })
-      .then(function(answer) {
-        switch (answer.action) {
+      .then(function({ action }) {
+        switch (action) {
         case "View all departments":
           departmentSearch();
           break;
   
         case "View all roles":
-          rolesSearch();
+          roleSearch();
           break;
   
         case "View all employees":
           employeeSearch();
+          break;
+
+          case "Add a department":
+          addDepartment();
+          break;
+
+          case "Add a role":
+          addRole();
+          break;
+
+          case "Add an employee":
+          addemployee();
+          break;
+
+          case "Update employee role":
+          updateRole();
           break;
   
         case "exit":
