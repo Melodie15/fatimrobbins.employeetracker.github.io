@@ -16,7 +16,8 @@ You can add a new employee, department or role, but also update your data as nee
 #**Technologies** used \
 1.Node.js \
 2.JSON \
-3.MySql\ 
+3.MySql \
+
 4.Javascript 
 
 #**Author**\
