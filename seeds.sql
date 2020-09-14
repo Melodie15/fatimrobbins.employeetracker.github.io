@@ -35,13 +35,13 @@ INSERT INTO employeelist (first_name, last_name, role_id, Manager_id)
 VALUES ("Andrew", "Jackson", 10, 20); 
 
 INSERT INTO employeelist (first_name, last_name, role_id, Manager_id) 
-VALUES ("Benjamin", "Franklin", 11); 
+VALUES ("Benjamin", "Franklin", 20); 
 
 INSERT INTO employeelist (first_name, last_name, role_id, Manager_id) 
 VALUES ("Thomas ", "Jefferson", 12, 21); 
 
 INSERT INTO employeelist (first_name, last_name, role_id, Manager_id) 
-VALUES ("John", "Adams", 13); 
+VALUES ("John", "Adams", 21); 
 
 INSERT INTO employeelist (first_name, last_name, role_id, Manager_id) 
 VALUES ("George", "Washington", 14); 
