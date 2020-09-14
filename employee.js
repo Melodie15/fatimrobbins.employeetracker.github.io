@@ -107,13 +107,13 @@ function roleSearch() {
       
       .then(function(res) {
         console.log(res)
-          const query = connection.query("INSERT INTO department (name) VALUES (?)" , [res.department], function (err, data) {
+          connection.query("INSERT INTO department (name) VALUES (?)" , [res.department], function (err, data) {
               if (err) throw err;
               console.table("Successfully Inserted");
               runSearch();
           })
-      })  
-      console.log('Add Department Completed') ;
+      }) 
+
   }
 
   function addRole() {
@@ -152,13 +152,20 @@ function addemployee() {
     }, {
       type: "number",
       name: "roleId",
-      message: "enter department ID:"
+      message: "provide the employees' role ID:"
+    }, {
+      type: "number",
+      name: "managerID",
+      message: "provide the employees' Manager's ID:"
     }
+
   ]).then(function(response) {
-    connection.query("INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)", [response.title, response.salary, response.department_id], function (err, data) {
-      console.table(data);
+    connection.query("INSERT INTO employee (first_name, last_name, role_id, manager_id ) VALUES (?, ?, ?)", [res.firstName, res.lastName, res.roleId, res.manager.Id], function (err, data) {
+      if (err) throw err;
+      console.table("New employee added");
+      runSearch();
   })
-  runSearch();
+ 
 })
 }
 
