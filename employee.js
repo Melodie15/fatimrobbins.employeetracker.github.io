@@ -55,3 +55,22 @@ function runSearch() {
         }
       });
   }
+
+  function departmentSearch() {
+    inquirer
+      .prompt({
+        name: "Departments",
+        type: "input",
+        message: "What would you like to search for?"
+      })
+      .then(function(answer) {
+        var query = "SELECT name FROM department WHERE ?";
+        connection.query(query, { department: answer.department }, function(err, res) {
+          if (err) throw err;
+          for (var i = 0; i < res.length; i++) {
+            console.log("Department: " + res[i].name);
+          }
+          runSearch();
+        });
+      });
+  }
