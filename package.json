@@ -1,0 +1,22 @@
+{
+  "name": "fatimrobbins.employeetracker.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "employee.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melodie15/fatimrobbins.employeetracker.github.io.git"
+  },
+  "author": "Fatim Robbins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melodie15/fatimrobbins.employeetracker.github.io/issues"
+  },
+  "homepage": "https://github.com/Melodie15/fatimrobbins.employeetracker.github.io#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
