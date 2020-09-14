@@ -25,9 +25,9 @@ connection.connect(function(err) {
 function runSearch() {
     inquirer
       .prompt({
+        message: "What would you like to do?",
         name: "action",
         type: "list",
-        message: "What would you like to do?",
         choices: [
           "View all departments",
           "View all roles",
@@ -77,20 +77,36 @@ function runSearch() {
   }
 
   function departmentSearch() {
-    inquirer
-      .prompt({
-        name: "Departments",
-        type: "input",
-        message: "What would you like to search for?"
-      })
-      .then(function(answer) {
-        var query = "SELECT name FROM department WHERE ?";
-        connection.query(query, { department: answer.department }, function(err, res) {
-          if (err) throw err;
-          for (var i = 0; i < res.length; i++) {
-            console.log("Department: " + res[i].name);
-          }
-          runSearch();
-        });
-      });
+  connection.query("SELECT * FROM department" , function (err , data) {
+      console.table(data) ;
+      runSearch();
+  })
+}
+
+function roleSearch() {
+    connection.query("SELECT * FROM role" , function (err , data) {
+        console.table(data) ;
+        runSearch();
+    })
+  }
+
+  function employeeSearch() {
+    connection.query("SELECT * FROM employeelist" , function (err , data) {
+        console.table(data) ;
+        runSearch();
+    })
+  }
+
+  function addDepartment() {
+      inquirer.prompt([{
+          type: "input",
+          name: "department",
+          message: "Please provide a new department"
+      }, ]) .then(function(res) {
+          connection.quert('INSERT INTO department (name) VALUES (?)' , [res.department], function (err, data) {
+              if (err) throw err;
+              console.table("Successfully Inserted");
+              runSearch();
+          })
+      })   
   }
