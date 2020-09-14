@@ -22,6 +22,6 @@ Fatim Robbins fmsis@hotmail.com
 
 <img src="Screenshot2.png" alt="Screenshot of app">
 
-<img src="Screenshot3.png" alt="Screenshot of app">
+<img src="Screenshot4.png" alt="Screenshot of app">
 
 
