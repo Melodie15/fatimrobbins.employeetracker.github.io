@@ -131,8 +131,8 @@ function roleSearch() {
         type: "number",
         name: "department_id"
       }
-    ]).then(function(response) {
-      connection.query("INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)", [response.title, response.salary, response.department_id], function (err, data) {
+    ]).then(function(res) {
+      connection.query("INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)", [res.title, res.salary, res.department_id], function (err, data) {
         console.table(data);
     })
     runSearch();
@@ -159,10 +159,10 @@ function addemployee() {
       message: "provide the employees' Manager's ID:"
     }
 
-  ]).then(function(response) {
-    connection.query("INSERT INTO employee (first_name, last_name, role_id, manager_id ) VALUES (?, ?, ?)", [res.firstName, res.lastName, res.roleId, res.manager.Id], function (err, data) {
+  ]).then(function(res) {
+    connection.query("INSERT INTO employeelist (first_name, last_name, role_id, manager_id ) VALUES (?, ?, ?, ?)", [res.firstName, res.lastName, res.roleId, res.managerID], function (err, data) {
       if (err) throw err;
-      console.table("New employee added");
+      console.table(data);
       runSearch();
   })
  
