@@ -132,7 +132,8 @@ function roleSearch() {
         name: "department_id"
       }
     ]).then(function(res) {
-      connection.query("INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)", [res.title, res.salary, res.department_id], function (err, data) {
+      connection.query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [res.title, res.salary, res.department_id], function (err, data) {
+        if (err) throw err;
         console.table(data);
     })
     runSearch();
@@ -180,9 +181,15 @@ function updateRole() {
       type: "number",
       name: "role_id"
 
+    }, {
+      message: "provide the new role:",
+      type: "input",
+      name: "title"
+
     }
-  ]).then(function(response) {
-    connection.query("Update employee role_id = ? WHERE first_name = ?", [response.role_id, response.name], function (err, data) {
+  ]).then(function(res) {
+    connection.query("Update employee role_id = ? title = ? WHERE first_name = ?", [res.role_id, res.name, res.title], function (err, data) {
+      if (err) throw err;
       console.table(data);
   })
   runSearch();
